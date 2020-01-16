@@ -3,7 +3,7 @@ import axios from 'axios';
 
 
 const Movie = (props) => {
-    console.log(props)
+  console.log(props)
   const [movie, setMovie] = useState();
 
   useEffect(() => {
@@ -20,7 +20,7 @@ const Movie = (props) => {
           console.error(error);
         });
 
-  },[]);
+  },[props.match.params.id]);
 
   // Uncomment this only when you have moved on to the stretch goals
   // const saveMovie = () => {
@@ -36,7 +36,7 @@ const Movie = (props) => {
   return (
     <div className="save-wrapper">
       <div className="movie-card">
-        <h2>{title}</h2>
+        <h2>Title: {title}</h2>
         <div className="movie-director">
           Director: <em>{director}</em>
         </div>
