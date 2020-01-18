@@ -21,9 +21,9 @@ h2:hover{
   width: 74%;
   color: crimson;
   box-shadow:
-                1px 1px #53a7ea,
-                2px 2px #53a7ea,
-                3px 3px #53a7ea;
+                6px 6px #53a7ea,
+                8px 8px #53a7ea,
+                10px 10px #53a7ea;
         -webkit-transform: translateX(-3px);
         transform: translateX(-3px);
 }
@@ -83,4 +83,10 @@ h2:hover{
 .home-button {
   padding: 5px 10px;
   background-color: lightskyblue;
+}
+
+.home-button:hover{
+  text-decoration: none;
+  background-color: slategray;
+  color: white;
 }

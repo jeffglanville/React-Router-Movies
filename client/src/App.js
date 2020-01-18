@@ -7,7 +7,9 @@ import Movie from './Movies/Movie';
 const App = () => {
   const [savedList, setSavedList] = useState( [] );
 
-  const addToSavedList = movie => {
+  const addToSavedList = (movie) => {
+    const savedList = {savedList};
+    savedList.push(movie);
     setSavedList( [...savedList, movie] );
   };
 
