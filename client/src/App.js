@@ -9,13 +9,26 @@ const App = () => {
 
   const addToSavedList = movie => {
     setSavedList( [...savedList, movie] );
+    return savedList.includes(movie) ? '' : setSavedList([...savedList, movie]);
   };
 
+  const removeFromSavedList = (movie) => {
+    const newList = savedList.filter((e) => {
+      return e !== movie;
+    });
+    setSavedList(newList);
+  }
+
+
   return (
-    <div>
-      <SavedList list={savedList} />
-      <Route exact path = "/" component = {MovieList}></Route>
-      <Route exact path = "/movies/:id" render={(props) => <Movie {...props}/>}/>
+    <div className = 'app'>
+      <SavedList removeFromSavedList = {removeFromSavedList} list={savedList} />
+      <Route exact path = "/" >
+        <MovieList />
+      </Route>
+      <Route exact path = "/movies/:id">
+      <Movie addToSavedList = {addToSavedList} />
+      </Route>
     </div>
   );
 };
